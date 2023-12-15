@@ -11,3 +11,10 @@ h3 {
     margin: 0 0 10px 10px;
     padding: 5px;
 }
+
+.icon {
+    width: 20%;
+    background-color: rgb(188, 188, 188);
+    border-radius: 12px;
+    border: none;
+}
