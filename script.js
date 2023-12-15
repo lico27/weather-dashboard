@@ -1,7 +1,6 @@
-$('#run-search').on('click', function(event){
+$('#search-button').on('click', function(event){
     event.preventDefault();
-    let searchTerm = $('#search-term').val();
-    console.log(searchTerm);
+    let searchCity = $('#search-input').val();
     
     // let startDate = $('#start-year').val();
     // console.log(startDate)
@@ -10,9 +9,8 @@ $('#run-search').on('click', function(event){
     // &begin_date=20040101
     // &end_date=20060101
 
-    let queryURL = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&api-key=hJP5156LDdzIzu1Y12NLJ9TnCQbxYz1X";
     
-
+    let queryURL= "http://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=7ddd7e57555c4c12e3640f758afd6ed6";
    
 
     fetch(queryURL)
@@ -20,26 +18,17 @@ $('#run-search').on('click', function(event){
         return response.json();
     }).then(function(data){
         console.log(data);
+        let cityName = data.city.name;
 
-        let articleTitle = data.response.docs[0].headline.main;
-        let byLine = data.response.docs[0].byline.original;
-        let url = data.response.docs[0].web_url;
-        console.log(url);
+        let forecastSection = $('#forecast');
+
+        let card = $('<div>');
+        card.append('<h3>' + cityName + '</h3>');
+        card.attr("class", "card col-sm-2");
+
+        forecastSection.append(card);
 
 
-        let articleDiv = $('#article-section');
-        let heading = $('<h2>');
-        heading.text(articleTitle);
-
-        let author = $('<p>');
-        author.text(byLine);
-
-        let webURL = $('<a>');
-        webURL.text(url);
-        webURL.attr("href", url);
-
-        articleDiv.append(heading, author, webURL);
-        
     })
 
 });

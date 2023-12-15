@@ -1,0 +1,13 @@
+* {
+    border: solid 1px black;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.card {
+    background-color: grey;
+    margin: 0 0 10px 10px;
+    padding: 5px;
+}
