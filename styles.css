@@ -1,23 +1,37 @@
-* {
+/* * {
     border: solid 1px black;
-}
+} */
 
 h3 {
     font-size: 20px;
 }
 
+#today {
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .card {
     background-color: grey;
     margin: 0 0 10px 10px;
-    padding: 5px;
+    padding: 10px;
 }
 
-.icon {
-    width: 20%;
+.icon-card {
+    width: 40px;
     background-color: rgb(188, 188, 188);
     border-radius: 12px;
 }
 
+.icon-header {
+    width: 40px;
+    background-color: rgb(188, 188, 188);
+    border-radius: 12px;
+    margin-left: 10px;
+}
+
 p {
     margin: 0;
+    font-size: 16px;
 }
