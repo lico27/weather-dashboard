@@ -16,5 +16,8 @@ h3 {
     width: 20%;
     background-color: rgb(188, 188, 188);
     border-radius: 12px;
-    border: none;
+}
+
+p {
+    margin: 0;
 }
