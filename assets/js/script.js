@@ -23,7 +23,7 @@ $("#search-button").on("click", function(event){
         let weatherIconNum = dataToday.weather[0].icon
         let todayDate = dayjs();
         let weatherIconHeader = $("<img>");
-        let todayHeader = $("<h2>" + cityName + " (" + todayDate.format("DD/MM/YYYY") + ")" + "</h2>");
+        let todayHeader = $("<h2>" + "Today in " + cityName + " (" + todayDate.format("DD/MM/YYYY") + "):" + "</h2>");
         let weatherType = dataToday.weather[0].main;
         let temp = Math.round(dataToday.main.temp);
         let wind = dataToday.wind.speed;
@@ -67,7 +67,7 @@ $("#search-button").on("click", function(event){
         for (let i = 0; i < fiveDays.length; i++) {
             console.log(fiveDays[i]);
 
-            let cardHead = fiveDays[i].dt_txt;
+            let cardHead = dayjs(fiveDays[i].dt_txt).format("DD/MM/YYYY @ h.mma");
             let weatherIconNum = fiveDays[i].weather[0].icon
             let weatherIconCard = $("<img>");
             let weatherType = fiveDays[i].weather[0].main;
