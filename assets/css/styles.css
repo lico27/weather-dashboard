@@ -57,6 +57,12 @@ input {
 }
 
 /* Forecast section styles */
+#forecast {
+    border: solid 1px #5c5470;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 .card {
     background-color: #2a2438;
     margin: 0 0 10px 10px;
