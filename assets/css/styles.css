@@ -1,7 +1,6 @@
 /* Main body and text styles */
 * {
-    /* border: solid 1px black; */
-    color: #dbd8e3;
+    color: #7b748d;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -20,8 +19,19 @@ body {
     background-color: #352f44;
 }
 
+h2 {
+    font-size: 26px;
+    color: #dbd8e3;
+}
+
 h3 {
     font-size: 20px;
+    color: #dbd8e3;
+}
+
+h4 {
+    font-size: 18px;
+    margin: 5px 0 5px 0;
     color: #dbd8e3;
 }
 
@@ -38,6 +48,11 @@ input {
     padding: 5px;
     border: solid 1px #2a2438;
     border-radius: 7px;
+}
+
+.search-head {
+    font-size: 24px;
+    padding: 20px 0 0 0;
 }
 
 #search-button {
@@ -72,7 +87,7 @@ input {
 
 .icon-header {
     width: 40px;
-    background-color: rgb(188, 188, 188);
+    background-color: #7b748d;
     border-radius: 12px;
     margin-left: 10px;
 }
@@ -87,6 +102,7 @@ input {
 .card {
     background-color: #2a2438;
     margin: auto;
+    margin-bottom: 10px;
     padding: 10px;
     border: solid 1px #5c5470;
     color: #dbd8e3;
@@ -94,6 +110,7 @@ input {
 
 .icon-card {
     width: 40px;
-    background-color: rgb(188, 188, 188);
+    background-color: #7b748d;
     border-radius: 12px;
+    margin-bottom: 5px;
 }

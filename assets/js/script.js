@@ -4,11 +4,16 @@ $("#search-button").on("click", function(event){
     let searchCity = $("#search-input").val();
     $("#search-input").val("");  
 
+    // Function to build search history
+    function buildHistory() {
+        console.log(searchCity);
+    };
+    buildHistory();
+
     // Function to build 'today' section
     function buildToday() {
     // Build today API query
     let queryURLToday = "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&units=metric&appid=7ddd7e57555c4c12e3640f758afd6ed6";
-
     // Fetch API data
     fetch(queryURLToday)
         .then(function(responseToday){
@@ -33,9 +38,10 @@ $("#search-button").on("click", function(event){
         // Append to today section
         todaySection.append(todayHeader);
         todayHeader.append(weatherIconHeader.attr("src", "https://openweathermap.org/img/wn/" + weatherIconNum + ".png").attr("class", "icon-header"));
-        todayHeader.append("<p>" + "Temp: " + temp + "°C" + "</p>");
-        todayHeader.append("<p>" + "Wind: " + wind + " m/s" + "</p>");
-        todayHeader.append("<p>" + "Humidity: " + humidity + "%" + "</p>");
+        todaySection.append("<h4>" + weatherType + "</h4>");
+        todaySection.append("<p>" + "Temp: " + temp + "°C" + "</p>");
+        todaySection.append("<p>" + "Wind: " + wind + " m/s" + "</p>");
+        todaySection.append("<p>" + "Humidity: " + humidity + "%" + "</p>");
         
     })
     };
@@ -83,8 +89,8 @@ $("#search-button").on("click", function(event){
                 let card = $("<div>");
                 card.attr("class", "card col-md-2");
                 card.append("<h3>" + cardHead + "</h3>");
-                card.append("<p>" + weatherType + "</p>");
                 card.append(weatherIconCard.attr("src", "https://openweathermap.org/img/wn/" + weatherIconNum + ".png").attr("class", "icon-card"));
+                card.append("<h4>" + weatherType + "</h4>");
                 card.append("<p>" + "Temp: " + temp + "°C" + "</p>");
                 card.append("<p>" + "Wind: " + wind + " m/s" + "</p>");
                 card.append("<p>" + "Humidity: " + humidity + "%" + "</p>");
