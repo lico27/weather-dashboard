@@ -13,7 +13,6 @@ $("#search-button").on("click", function(event){
         .then(function(responseToday){
         return responseToday.json();
     }).then(function(dataToday){
-        console.log(dataToday);
 
         // Section variables
         let todaySection = $("#today");
@@ -60,24 +59,33 @@ $("#search-button").on("click", function(event){
 
         // Data category variables
         let cityName = data.city.name;
-        let weatherIconNum = data.list[0].weather[0].icon
-        let weatherIconCard = $("<img>");
-        let weatherType = data.list[0].weather[0].main;
-        let temp = Math.round(data.list[0].main.temp);
-        let wind = data.list[0].wind.speed;
-        let humidity = data.list[0].main.humidity;
+        let fiveDays = data.list;
 
-        // Append to forecast cards
-        let card = $("<div>");
-        card.attr("class", "card col-md-2");
-        card.append("<h3>" + cityName + "</h3>");
-        card.append("<p>" + weatherType + "</p>");
-        card.append(weatherIconCard.attr("src", "https://openweathermap.org/img/wn/" + weatherIconNum + ".png").attr("class", "icon-card"));
-        card.append("<p>" + "Temp: " + temp + "°C" + "</p>");
-        card.append("<p>" + "Wind: " + wind + " m/s" + "</p>");
-        card.append("<p>" + "Humidity: " + humidity + "%" + "</p>");
-        forecastSection.append(card);
+
         
+        // For loop to make forecast cards
+        for (let i = 0; i < fiveDays.length; i++) {
+            console.log(fiveDays[i]);
+
+            let cardHead = fiveDays[i].dt_txt;
+            let weatherIconNum = fiveDays[i].weather[0].icon
+            let weatherIconCard = $("<img>");
+            let weatherType = fiveDays[i].weather[0].main;
+            let temp = Math.round(fiveDays[i].main.temp);
+            let wind = fiveDays[i].wind.speed;
+            let humidity = fiveDays[i].main.humidity;
+    
+            // Append to forecast cards
+            let card = $("<div>");
+            card.attr("class", "card col-md-2");
+            card.append("<h3>" + cardHead + "</h3>");
+            card.append("<p>" + weatherType + "</p>");
+            card.append(weatherIconCard.attr("src", "https://openweathermap.org/img/wn/" + weatherIconNum + ".png").attr("class", "icon-card"));
+            card.append("<p>" + "Temp: " + temp + "°C" + "</p>");
+            card.append("<p>" + "Wind: " + wind + " m/s" + "</p>");
+            card.append("<p>" + "Humidity: " + humidity + "%" + "</p>");
+            forecastSection.append(card);
+        }
     })
     };
     buildForecast();
