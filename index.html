@@ -16,6 +16,7 @@
     <h1>Weather Dashboard</h1>
   </header>
 
+  <main>
   <!-- max-width for ultra wide resolutions -->
   <div class="container-fluid" style="max-width: 1400px">
     <div class="row">
@@ -30,7 +31,7 @@
         <form id="search-form" class="form">
           <div class="form-inline form-group">
             <div>
-              <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
+              <input class="form-input weather-search" type="text" id="search-input" placeholder="e.g. London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append" id="searchDiv">
                 <button type="submit" class="btn search-button card" id="search-button" aria-label="submit search">
@@ -68,6 +69,8 @@
       </div>
     </div>
   </div>
+</main>
+
 
   <!-- Day.js -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>

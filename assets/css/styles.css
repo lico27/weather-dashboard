@@ -4,6 +4,12 @@
     color: #dbd8e3;
 }
 
+main {
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
 body {
     background-color: #352f44;
 }
@@ -30,8 +36,22 @@ input {
     background-color: #5c5470;
     padding: 5px;
     border: solid 1px #2a2438;
-    color: #dbd8e3;
     border-radius: 7px;
+}
+
+#search-button {
+    width: 100%;
+    margin: 0;
+    padding: 3px;
+    align-items: center;
+}
+
+#search-input {
+    color: #dbd8e3;
+}
+
+::placeholder {
+    color: #2a2438;
 }
 
 #btnHistory {
@@ -65,7 +85,7 @@ input {
 
 .card {
     background-color: #2a2438;
-    margin: 0 0 10px 10px;
+    margin: auto;
     padding: 10px;
     border: solid 1px #5c5470;
     color: #dbd8e3;
