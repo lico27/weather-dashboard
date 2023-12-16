@@ -2,6 +2,7 @@
 $("#search-button").on("click", function(event){
     event.preventDefault();
     let searchCity = $("#search-input").val();
+    $("#search-input").val("");  
 
     // Function to build 'today' section
     function buildToday() {
@@ -55,7 +56,7 @@ $("#search-button").on("click", function(event){
         // Section variables
         let forecastSection = $("#forecast");
         forecastSection.empty();
-        let forecastTitle = "Five day forecast";
+        let forecastTitle = "Five-day forecast";
         forecastSection.append("<h2>" + forecastTitle + "</h2>");
 
         // Data category variables
@@ -68,7 +69,7 @@ $("#search-button").on("click", function(event){
             // Date and time variables
             let cardHead = dayjs(fiveDays[i].dt_txt).format("DD/MM/YYYY");
             let cardTime = dayjs(fiveDays[i].dt_txt).format("HH");
-            
+
             // If loop to show only one card per day
             if (cardTime === "12") {                
                 let weatherIconNum = fiveDays[i].weather[0].icon
