@@ -2,6 +2,7 @@
 * {
     /* border: solid 1px black; */
     color: #dbd8e3;
+    font-family: 'Rubik', sans-serif;
 }
 
 main {
@@ -10,13 +11,13 @@ main {
     margin: auto;
 }
 
-body {
-    background-color: #352f44;
-}
-
 .weather-header {
     background: linear-gradient(177.9deg, #2a2438 3.6%, #5c5470 105.8%);
     color: #dbd8e3;
+}
+
+body {
+    background-color: #352f44;
 }
 
 h3 {
