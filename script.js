@@ -67,8 +67,6 @@ $("#search-button").on("click", function(event){
         let wind = data.list[0].wind.speed;
         let humidity = data.list[0].main.humidity;
 
-        
-
         // Append to forecast cards
         let card = $("<div>");
         card.attr("class", "card col-md-2");

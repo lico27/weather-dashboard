@@ -1,3 +1,4 @@
+/* Main body and text styles */
 * {
     /* border: solid 1px black; */
     color: #dbd8e3;
@@ -8,7 +9,8 @@ body {
 }
 
 .weather-header {
-    background: linear-gradient(177.9deg, rgb(58, 62, 88) 3.6%, rgb(119, 127, 148) 105.8%);
+    background: linear-gradient(177.9deg, #2a2438 3.6%, #5c5470 105.8%);
+    color: #dbd8e3;
 }
 
 h3 {
@@ -16,24 +18,35 @@ h3 {
     color: #dbd8e3;
 }
 
+p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Aside bar styles - search and history */
+input {
+    width: 100%;
+    margin: 0 0 10px 0;
+    background-color: #5c5470;
+    padding: 5px;
+    border: solid 1px #2a2438;
+    color: #dbd8e3;
+    border-radius: 7px;
+}
+
+#btnHistory {
+    display: grid;
+    text-align: center;
+    padding: 3px;
+    margin: 0;
+}
+
+/* Today section styles */
 #today {
     border: solid 1px #5c5470;
     padding: 10px;
     border-radius: 5px;
     background-color: #2a2438;
-}
-
-.card {
-    background-color: #2a2438;
-    margin: 0 0 10px 10px;
-    padding: 10px;
-    border: solid 1px #5c5470;
-}
-
-.icon-card {
-    width: 40px;
-    background-color: rgb(188, 188, 188);
-    border-radius: 12px;
 }
 
 .icon-header {
@@ -43,11 +56,18 @@ h3 {
     margin-left: 10px;
 }
 
-p {
-    margin: 0;
-    font-size: 16px;
-}
-
-.btn {
+/* Forecast section styles */
+.card {
+    background-color: #2a2438;
+    margin: 0 0 10px 10px;
+    padding: 10px;
+    border: solid 1px #5c5470;
     color: #dbd8e3;
 }
+
+.icon-card {
+    width: 40px;
+    background-color: rgb(188, 188, 188);
+    border-radius: 12px;
+}
+
