@@ -67,9 +67,11 @@ $("#search-button").on("click", function(event){
         let wind = data.list[0].wind.speed;
         let humidity = data.list[0].main.humidity;
 
+        
+
         // Append to forecast cards
         let card = $("<div>");
-        card.attr("class", "card col-sm-2");
+        card.attr("class", "card col-md-2");
         card.append("<h3>" + cityName + "</h3>");
         card.append("<p>" + weatherType + "</p>");
         card.append(weatherIconCard.attr("src", "https://openweathermap.org/img/wn/" + weatherIconNum + ".png").attr("class", "icon-card"));

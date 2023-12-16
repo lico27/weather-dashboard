@@ -1,21 +1,33 @@
-/* * {
-    border: solid 1px black;
-} */
+* {
+    /* border: solid 1px black; */
+    color: #dbd8e3;
+}
+
+body {
+    background-color: #352f44;
+}
+
+.weather-header {
+    background: linear-gradient(177.9deg, rgb(58, 62, 88) 3.6%, rgb(119, 127, 148) 105.8%);
+}
 
 h3 {
     font-size: 20px;
+    color: #dbd8e3;
 }
 
 #today {
-    border: solid 1px black;
+    border: solid 1px #5c5470;
     padding: 10px;
     border-radius: 5px;
+    background-color: #2a2438;
 }
 
 .card {
-    background-color: grey;
+    background-color: #2a2438;
     margin: 0 0 10px 10px;
     padding: 10px;
+    border: solid 1px #5c5470;
 }
 
 .icon-card {
@@ -34,4 +46,8 @@ h3 {
 p {
     margin: 0;
     font-size: 16px;
+}
+
+.btn {
+    color: #dbd8e3;
 }
