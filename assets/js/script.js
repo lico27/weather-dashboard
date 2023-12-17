@@ -1,10 +1,20 @@
 // Retrieve any saved cities from storage
 
-// Varianbles for search history
+
+// Clear saved and visible data
+$("#btnClearHistory").on("click", function(event){
+    event.preventDefault();
+    $("#history").empty();
+    $("#today").empty();
+    $("#forecast").empty();
+    localStorage.clear();
+});
+
+// Variables for search history
 let arrCities = [];
 let historySection = $("#history");
 
-// Event listener to get city name
+// Event listener to call API and render info
 $("#search-button").on("click", function(event){
     event.preventDefault();
     let searchCity = $("#search-input").val();

@@ -98,6 +98,11 @@ input {
     width: 100%;
 }
 
+#history {
+    overflow: scroll;
+    height: 200px;
+}
+
 /* Today section styles */
 #today {
     border: solid 1px #5c5470;
