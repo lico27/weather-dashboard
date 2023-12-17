@@ -1,5 +1,4 @@
 # weather-dashboard v1
-An app to check the weather forecast
 
 ## Description
 An app to see current weather conditions in a chosen city, and to view the forecast for the upcoming five days.

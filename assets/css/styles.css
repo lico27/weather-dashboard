@@ -40,6 +40,15 @@ p {
     font-size: 16px;
 }
 
+.card {
+    background-color: #2a2438;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: solid 1px #5c5470;
+    color: #dbd8e3;
+}
+
 /* Aside bar styles - search and history */
 input {
     width: 100%;
@@ -70,11 +79,23 @@ input {
     color: #2a2438;
 }
 
-#btnHistory {
+.btnHistory {
+    display: grid;
+    text-align: center;
+    padding: 3px;
+    width: 100%;
+    margin: 0 0 5px 0;
+    background-color: #5c5470;
+    border: solid 1px #2a2438;
+    border-radius: 7px;
+}
+
+.btnClear {
     display: grid;
     text-align: center;
     padding: 3px;
     margin: 0;
+    width: 100%;
 }
 
 /* Today section styles */
@@ -97,15 +118,6 @@ input {
     border: solid 1px #5c5470;
     border-radius: 5px;
     padding: 10px;
-}
-
-.card {
-    background-color: #2a2438;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: solid 1px #5c5470;
-    color: #dbd8e3;
 }
 
 .icon-card {

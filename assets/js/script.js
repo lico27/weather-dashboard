@@ -1,3 +1,9 @@
+// Retrieve any saved cities from storage
+
+// Varianbles for search history
+let arrCities = [];
+let historySection = $("#history");
+
 // Event listener to get city name
 $("#search-button").on("click", function(event){
     event.preventDefault();
@@ -6,7 +12,10 @@ $("#search-button").on("click", function(event){
 
     // Function to build search history
     function buildHistory() {
-        console.log(searchCity);
+        arrCities.push(searchCity);
+        localStorage.setItem("city", arrCities);
+        let storedCity = $("<button>" + searchCity + "</button>").attr("class", "card btnHistory");
+        historySection.prepend(storedCity);  
     };
     buildHistory();
 
@@ -98,7 +107,8 @@ $("#search-button").on("click", function(event){
             };
 
         }
-    })
+
+    });
     };
     buildForecast();
 
