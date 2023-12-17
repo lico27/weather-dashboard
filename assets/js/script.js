@@ -5,7 +5,14 @@ let todaySection = $("#today");
 let forecastSection = $("#forecast");
 
 // Retrieve any saved cities from storage
-let currentStored = JSON.parse(localStorage.getItem(city));
+if (localStorage.getItem("cities")) {
+    arrCities = JSON.parse(localStorage.getItem("cities"));
+}
+
+
+
+console.log(typeof arrCities);
+
 
 // Clear saved and visible data
 $("#btnClearHistory").on("click", function(event){
@@ -114,7 +121,8 @@ $("#search-button").on("click", function(event){
     // Function to build search history
     function buildHistory() {
         arrCities.push(searchCity);
-        localStorage.setItem("city", arrCities);
+        let stringCities = JSON.stringify(arrCities);
+        localStorage.setItem("cities", stringCities);
         let storedCity = $("<button>" + searchCity + "</button>").attr("class", "card btnHistory").attr("id", searchCity);
         historySection.prepend(storedCity);  
     };
