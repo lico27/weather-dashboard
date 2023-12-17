@@ -1,18 +1,20 @@
 // Retrieve any saved cities from storage
 
 
+// Set variables
+let arrCities = [];
+let historySection = $("#history");
+let todaySection = $("#today");
+let forecastSection = $("#forecast");
+
 // Clear saved and visible data
 $("#btnClearHistory").on("click", function(event){
     event.preventDefault();
-    $("#history").empty();
-    $("#today").empty();
-    $("#forecast").empty();
+    historySection.empty();
+    todaySection.empty();
+    forecastSection.empty();
     localStorage.clear();
 });
-
-// Variables for search history
-let arrCities = [];
-let historySection = $("#history");
 
 // Event listener to call API and render info
 $("#search-button").on("click", function(event){
@@ -39,8 +41,6 @@ $("#search-button").on("click", function(event){
         return responseToday.json();
     }).then(function(dataToday){
 
-        // Section variables
-        let todaySection = $("#today");
         todaySection.empty();
 
         // Data category variables
@@ -78,8 +78,6 @@ $("#search-button").on("click", function(event){
     }).then(function(data){
         console.log(data);
 
-        // Section variables
-        let forecastSection = $("#forecast");
         forecastSection.empty();
         let forecastTitle = "Five-day forecast";
         forecastSection.append("<h2>" + forecastTitle + "</h2>");
