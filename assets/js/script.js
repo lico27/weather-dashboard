@@ -1,11 +1,11 @@
-// Retrieve any saved cities from storage
-
-
 // Set variables
 let arrCities = [];
 let historySection = $("#history");
 let todaySection = $("#today");
 let forecastSection = $("#forecast");
+
+// Retrieve any saved cities from storage
+let currentStored = JSON.parse(localStorage.getItem(city));
 
 // Clear saved and visible data
 $("#btnClearHistory").on("click", function(event){
@@ -21,15 +21,6 @@ $("#search-button").on("click", function(event){
     event.preventDefault();
     let searchCity = $("#search-input").val();
     $("#search-input").val("");  
-
-    // Function to build search history
-    function buildHistory() {
-        arrCities.push(searchCity);
-        localStorage.setItem("city", arrCities);
-        let storedCity = $("<button>" + searchCity + "</button>").attr("class", "card btnHistory");
-        historySection.prepend(storedCity);  
-    };
-    buildHistory();
 
     // Function to build 'today' section
     function buildToday() {
@@ -78,13 +69,13 @@ $("#search-button").on("click", function(event){
     }).then(function(data){
         console.log(data);
 
-        forecastSection.empty();
-        let forecastTitle = "Five-day forecast";
-        forecastSection.append("<h2>" + forecastTitle + "</h2>");
-
         // Data category variables
         let cityName = data.city.name;
         let fiveDays = data.list;
+
+        forecastSection.empty();
+        let forecastTitle = "Five-day forecast for " + cityName;
+        forecastSection.append("<h2>" + forecastTitle + "</h2>");
 
         // For loop to make forecast cards
         for (let i = 0; i < fiveDays.length; i++) {
@@ -120,5 +111,22 @@ $("#search-button").on("click", function(event){
     };
     buildForecast();
 
+    // Function to build search history
+    function buildHistory() {
+        arrCities.push(searchCity);
+        localStorage.setItem("city", arrCities);
+        let storedCity = $("<button>" + searchCity + "</button>").attr("class", "card btnHistory").attr("id", searchCity);
+        historySection.prepend(storedCity);  
+    };
+    buildHistory();
+
+    // Event listener to call data from past searches
+    $("#" + searchCity).on("click", function(event){
+        event.preventDefault();
+        buildToday();
+        buildForecast();
+    });
+
 });
+
 
