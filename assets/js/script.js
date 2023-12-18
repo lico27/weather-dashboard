@@ -4,16 +4,6 @@ let historySection = $("#history");
 let todaySection = $("#today");
 let forecastSection = $("#forecast");
 
-// Retrieve any saved cities from storage
-if (localStorage.getItem("cities")) {
-    arrCities = JSON.parse(localStorage.getItem("cities"));
-}
-
-
-
-console.log(typeof arrCities);
-
-
 // Clear saved and visible data
 $("#btnClearHistory").on("click", function(event){
     event.preventDefault();
@@ -21,6 +11,7 @@ $("#btnClearHistory").on("click", function(event){
     todaySection.empty();
     forecastSection.empty();
     localStorage.clear();
+    arrCities = [];
 });
 
 // Event listener to call API and render info
@@ -66,6 +57,7 @@ $("#search-button").on("click", function(event){
 
     // Function to build forecast cards
     function buildForecast() {
+
     // Build forecast API query
     let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&units=metric&appid=7ddd7e57555c4c12e3640f758afd6ed6";
    
@@ -137,4 +129,21 @@ $("#search-button").on("click", function(event){
 
 });
 
+// Retrieve any saved cities from storage
+if (localStorage.getItem("cities")) {
+    arrCities = JSON.parse(localStorage.getItem("cities"));
+    console.log(arrCities);
+    historySection.empty();
 
+    // Forloop to make saved cities buttons recall data - unfinished
+    for (let i = 0; i < arrCities.length; i++) {
+        let searchCity = arrCities[i];
+        let storedCity = $("<button>" + searchCity + "</button>").attr("class", "card btnHistory").attr("id", searchCity);
+        historySection.prepend(storedCity); 
+        $("#" + searchCity).on("click", function(event){
+            event.preventDefault();
+            console.log(searchCity);
+
+        });
+    };
+};
