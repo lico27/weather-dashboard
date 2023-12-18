@@ -1,4 +1,4 @@
-# weather-dashboard v1
+# weather-dashboard v2
 
 ## Description
 An app to see current weather conditions in a chosen city, and to view the forecast for the upcoming five days.
@@ -15,8 +15,9 @@ An app to see current weather conditions in a chosen city, and to view the forec
 
 ## To Do
 - Finish forloop to recall saved data after page closure/refresh
-  - Need to save data as an object to prevent it calling the API every time
+- Save data as an object to prevent it calling the API every time
 - Make code to add/subtract difference between searched city and UTC, so that data shows for the correct timezone
+- Fix today section disappearing when search term is not a city (could add error message too)
 
 ### Installation
 No installation required.

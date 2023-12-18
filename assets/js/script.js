@@ -131,7 +131,6 @@ $("#search-button").on("click", function(event){
 // Retrieve any saved cities from storage
 if (localStorage.getItem("cities")) {
     arrCities = JSON.parse(localStorage.getItem("cities"));
-    console.log(arrCities);
     historySection.empty();
 
     // Forloop to make saved cities buttons recall data - unfinished
