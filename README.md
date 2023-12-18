@@ -13,7 +13,7 @@ An app to see current weather conditions in a chosen city, and to view the forec
   - Build a sidebar to save past searches and buttons for each searched city
   - Recall searches from localstorage
 
-## To Do
+### To Do
 - Finish forloop to recall saved data after page closure/refresh
 - Save data as an object to prevent it calling the API every time
 - Make code to add/subtract difference between searched city and UTC, so that data shows for the correct timezone
