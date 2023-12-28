@@ -13,12 +13,6 @@ An app to see current weather conditions in a chosen city, and to view the forec
   - Build a sidebar to save past searches and buttons for each searched city
   - Recall searches from localstorage
 
-### To Do
-- Finish forloop to recall saved data after page closure/refresh
-- Save data as an object to prevent it calling the API every time
-- Make code to add/subtract difference between searched city and UTC, so that data shows for the correct timezone
-- Fix today section disappearing when search term is not a city (could add error message too)
-
 ### Installation
 No installation required.
 
@@ -40,7 +34,4 @@ JavaScript and CSS coded by Liam Cottrell. Basic HTML provided by edX Front-End 
 Produced under the MIT license.
 
 ## Badges
-![Static Badge](https://img.shields.io/badge/project-in_progress-blue)
-
-<!-- ## Badges
-![Static Badge](https://img.shields.io/badge/project-complete-brightgreen) -->
+![Static Badge](https://img.shields.io/badge/project-complete-brightgreen)
